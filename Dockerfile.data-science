@@ -1,39 +1,25 @@
-# Use an official Python image as the base image
-FROM python:3.9
+# Use an official Ubuntu image as the base image
+FROM ubuntu:20.04
 
-# Install system dependencies for some Python packages
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    libxml2-dev \
-    libxslt1-dev \
-    zlib1g-dev
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Install Python packages for data science (customize as needed)
-RUN pip install --no-cache-dir \
-    jupyter \
-    numpy \
-    pandas \
-    scikit-learn \
-    matplotlib \
-    seaborn \
-    torch \
-    transformers
+# Install necessary dependencies
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jre-headless wget unzip && \
+    apt-get clean
 
-# Set up a non-root user for security
-ARG USERNAME=vscode
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
+# Download and install H2O Studio
+RUN wget http://h2o-release.s3.amazonaws.com/h2o/rel-3.42.0/3/h2o-3.42.0.3.zip -O /tmp/h2o.zip && \
+    unzip /tmp/h2o.zip -d /opt && \
+    rm /tmp/h2o.zip && \
+    ln -s /opt/h2o-3.42.0.3 /opt/h2o
 
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
-
-# Switch to the non-root user
-USER $USERNAME
-
-# Set the default shell to bash for the non-root user
-SHELL ["/bin/bash", "-l", "-c"]
+# Expose the port used by H2O Studio (default: 54321)
+EXPOSE 54321
 
 # Set the working directory
-WORKDIR /workspace
+WORKDIR /opt/h2o
+
+# Start H2O Studio
+CMD ["java", "-jar", "h2o.jar"]

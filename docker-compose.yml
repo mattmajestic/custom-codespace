@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  dev:
+    image: mattmajestic/custom-codespace:dev
+    build:
+      context: .
+      dockerfile: Dockerfile.web-dev
+    ports:
+      - "8080:8080"
+      
+  ds:
+    image: mattmajestic/custom-codespace:ds
+    build:
+      context: .
+      dockerfile: Dockerfile.data-science
+    ports:
+      - "54321:54321"

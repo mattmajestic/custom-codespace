@@ -5,7 +5,7 @@ This repository provides pre-configured environments for GitHub code spaces:
 ## Web Development Environment 💻
 
 - Dockerfile: [Dockerfile-web-dev](./.devcontainer/web-dev/Dockerfile)
-- Docker Image: [![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace:web-dev?color=blue&label=web-dev&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace:web-dev)
+- Docker Image: [![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace:dev?color=blue&label=web-dev&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace:dev)
 
 ### Usage
 
