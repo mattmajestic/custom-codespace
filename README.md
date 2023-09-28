@@ -4,7 +4,7 @@ This repository provides pre-configured environments for GitHub code spaces:
 
 ## Web Development Environment 💻
 
-- Docker Image: [![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace?color=blue&label=dev&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace)
+[![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace?color=blue&label=dev&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace)
 
 ### Usage
 
@@ -17,7 +17,7 @@ To create a GitHub code space using the web development environment:
 
 ## Data Science Environment 📊
 
-- Docker Image: [![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace/tags?color=blue&label=ds&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace)
+[![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace?color=blue&label=ds&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace)
 
 ### Usage
 
