@@ -19,7 +19,7 @@ To create a GitHub code space using the web development environment:
 ## Data Science Environment 📊
 
 - Dockerfile: [Dockerfile-data-science](./.devcontainer/data-science/Dockerfile)
-- Docker Image: [![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace:ds?color=blue&label=data-science&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace:ds)
+- Docker Image: [![Docker Image](https://img.shields.io/docker/v/mattmajestic/custom-codespace/tags?color=blue&label=data-science&logo=docker&logoColor=white&style=for-the-badge)](https://hub.docker.com/r/mattmajestic/custom-codespace/tags)
 
 ### Usage
 
