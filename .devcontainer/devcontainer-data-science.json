@@ -1,0 +1,10 @@
+{
+    "name": "Data Science Environment",
+    "image": "mattmajestic/custom-codespace:ds",
+    "extensions": [
+      "ms-python.python",
+      "ms-toolsai.jupyter"
+    ],
+    "forwardPorts": [8888]
+  }
+  

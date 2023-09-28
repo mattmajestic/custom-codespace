@@ -1,0 +1,29 @@
+# Use an official Node.js LTS image as the base image
+FROM node:14
+
+# Install Python, pip, and essential build tools
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    build-essential
+
+# Install additional tools and libraries for web development (customize as needed)
+RUN npm install -g nodemon \
+    && pip3 install virtualenv
+
+# Set up a non-root user for security
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+
+# Switch to the non-root user
+USER $USERNAME
+
+# Set the default shell to bash for the non-root user
+SHELL ["/bin/bash", "-l", "-c"]
+
+# Set the working directory
+WORKDIR /app

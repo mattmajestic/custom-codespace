@@ -1,0 +1,11 @@
+{
+    "name": "Web Development Environment",
+    "image": "mattmajestic/custom-codespace:web-dev",
+    "extensions": [
+      "ms-vscode.vscode-typescript-next",
+      "ms-python.python",
+      "dbaeumer.vscode-eslint"
+    ],
+    "forwardPorts": [3000, 5432]
+  }
+    
