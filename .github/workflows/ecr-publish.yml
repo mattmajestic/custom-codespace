@@ -26,8 +26,8 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t custom-codespace:dev .
-          docker tag majesticcoding-image:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/custom-codespace:dev
+          docker build -t custom-codespace:dev -f Dockerfile.data-science .
+          docker tag custom-codespace:dev ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/custom-codespace:dev
 
       - name: Push Docker image to AWS ECR
         run: |
